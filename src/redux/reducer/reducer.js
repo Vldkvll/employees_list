@@ -11,19 +11,12 @@ function initApiState() {
         };
 
         acc[camelCase(next)] = inner;
-        // console.log("acc[next]")
-        // console.log(acc[next])
-        // console.log("inner")
-        // console.log(inner)
-        // console.log("acc")
-        // console.log(acc)
+
         return acc;
     }, {});
 }
 
 const INITIAL_STATE = initApiState();
-// console.log("INITIAL_STATE")
-// console.log(INITIAL_STATE)
 
 export const apiReducer = (state = INITIAL_STATE, action) => {
     // debugger
@@ -32,9 +25,6 @@ export const apiReducer = (state = INITIAL_STATE, action) => {
             const innerStart = camelCase(
                 action.type.replace(API_ACTIONS.FETCH_START, "")
             );
-
-            // console.log(...state)
-            console.log("API_ACTIONS.FETCH_START");
             return {
                 ...state,
                 [innerStart]: {
@@ -48,8 +38,6 @@ export const apiReducer = (state = INITIAL_STATE, action) => {
             const innerSuccess = camelCase(
                 action.type.replace(API_ACTIONS.FETCH_SUCCESS, "")
             );
-
-            console.log("API_ACTIONS.FETCH_SUCCESS");
 
             return {
                 ...state,
@@ -66,7 +54,6 @@ export const apiReducer = (state = INITIAL_STATE, action) => {
                 action.type.replace(API_ACTIONS.FETCH_FAILURE, "")
             );
 
-            console.log(...state);
             return {
                 ...state,
                 [innerFailure]: {

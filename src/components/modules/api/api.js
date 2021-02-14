@@ -15,11 +15,12 @@ class Api {
 
     async fetch(endpoint, data) {
         const response = await this.generateRequest(endpoint, data);
-        // console.log("response");
-        // console.log(response.json());
 
         return response.json();
     }
 }
 
 export default new Api(BASE_URL, ENDPOINTS);
+
+
+
