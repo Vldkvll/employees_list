@@ -13,7 +13,8 @@ const Jobs = () => {
             dispatch(apiActionsCreator.fetch(JOBS));
 
             const data = await api.fetch(JOBS);
-
+            //   console.log("data");
+            //         console.log(data);
             dispatch(apiActionsCreator.fetchSuccess(JOBS, data));
         } catch (error) {
             dispatch(apiActionsCreator.fetchSuccess(JOBS, error));
@@ -22,6 +23,7 @@ const Jobs = () => {
 
     console.log("state");
     console.log(state);
+
     return <div>Jobs Component</div>;
 };
 
